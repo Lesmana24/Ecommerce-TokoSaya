@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 {{-- Judul Halaman --}}
-@section('title', 'Home - TokoOnline')
+@section('title', 'Home - TokoSaya')
 
 @section('content')
     {{-- 1. HERO SECTION (Ucapan Selamat Datang) --}}
