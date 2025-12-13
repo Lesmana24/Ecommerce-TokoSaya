@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 {{-- Judul Halaman --}}
-@section('title', 'Home - TokoSaya')
+@section('title', 'Home - Toko')
 
 @section('content')
     {{-- 1. HERO SECTION (Ucapan Selamat Datang) --}}
@@ -33,15 +33,17 @@
             <div class="col">
                 <div class="card h-100 border-0 shadow-sm hover-card">
                     {{-- Badge "New" --}}
-                    
-                    <img src="{{ $item['img'] }}" class="card-img-top" alt="{{ $item['name'] }}">
-                    
+
+                    <img src="{{ asset('storage/' . $item->image) }}?t={{ time() }}"
+     class="card-img-top"
+     alt="{{ $item->name }}"
+     style="height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title text-truncate">{{ $item['name'] }}</h5>
                         <p class="card-text text-muted small">Kualitas terbaik dengan garansi resmi 1 tahun.</p>
                         <h6 class="text-primary fw-bold mb-3">Rp {{ number_format($item['price'], 0, ',', '.') }}</h6>
                     </div>
-                    
+
                     <div class="card-footer bg-white border-top-0 d-grid gap-2 mb-2">
                         <button class="btn btn-outline-primary btn-sm">
                             <i class="fa-solid fa-cart-plus"></i> Keranjang

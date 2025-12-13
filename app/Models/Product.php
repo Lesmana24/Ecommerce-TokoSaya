@@ -2,13 +2,26 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Categories;
 
 class Product extends Model
 {
+    use HasFactory;
+
+    protected $fillable = [
+        'category_id',
+        'name',
+        'description',
+        'price',
+        'stock',
+        'image',
+    ];
+
+    // Relasi ke Category
     public function category()
     {
-        return $this->belongsTo(Categories::class);
+        // Sesuaikan 'Categories::class' dengan nama file model kategori kamu
+        return $this->belongsTo(Categories::class, 'category_id');
     }
 }
