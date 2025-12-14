@@ -8,7 +8,7 @@
     <section class="container mb-5">
         <div class="p-5 p-lg-5 bg-light rounded-3 text-center shadow-sm">
             <div class="m-4 m-lg-5">
-                <h1 class="display-4 fw-bold">Selamat Datang di TokoOnline!</h1>
+                <h1 class="display-4 fw-bold">Selamat Datang di TokoSaya!</h1>
                 <p class="fs-4 text-muted">Solusi belanja hemat, cepat, dan terpercaya untuk segala kebutuhan Anda.</p>
                 <hr class="my-4 mx-auto" style="width: 100px; height: 3px; background-color: #0d6efd; opacity: 1;">
                 <p>Dapatkan diskon hingga 50% untuk pengguna baru hari ini.</p>

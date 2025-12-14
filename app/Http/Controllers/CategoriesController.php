@@ -24,10 +24,19 @@ class CategoriesController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
         ]);
+        $name_check = DB::table('categories')->where('name', $request->name)->first();
+        if ($name_check) {
+            return redirect()->back()->withErrors(['name' => 'Category name already exists.'])->withInput();
+        }
 
-        Category::create($request->all());
+        else {
+            Category::create($request->all());
 
-        return redirect()->route('categories.index')->with('success', 'Category created successfully.');
+        return redirect()->route('categories-admin')->with('success', 'Category created successfully.');
+        }
+
+
+
     }
 
     public function edit(Category $category)
@@ -40,10 +49,16 @@ class CategoriesController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
         ]);
+        $name_check = DB::table('categories')->where('name', $request->name)->first();
+        if ($name_check) {
+            return redirect()->back()->withErrors(['name' => 'Category name already exists.'])->withInput();
+        }
 
-        $category->update($request->all());
+        else {
+           $category->update($request->all());
 
-        return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
+        return redirect()->route('categories-admin')->with('success', 'Category updated successfully.');
+        }
     }
 
     public function destroy(Category $category)
